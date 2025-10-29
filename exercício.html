@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Notas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Notas</h1>
+
+        <input type="text" id="notaTexto" placeholder="Digite sua nota aqui">
+
+        <div class="radios">
+            <label><input type="radio" name="urgencia" value="nao" checked> Não urgente</label>
+            <label><input type="radio" name="urgencia" value="sim"> Urgente</label>
+        </div>
+
+        <div class="acoes">
+            <button id="btnAdicionar">Adicionar</button>
+            <button id="btnApagarTudo">Apagar tudo</button>
+        </div>
+
+        <div class="listas">
+            <div class="box nao-urgente-box">
+                <h2>Não Urgente</h2>
+                <ul id="listaNao"></ul>
+            </div>
+
+            <div class="box urgente-box">
+                <h2>Urgente</h2>
+                <ul id="listaUrgente"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/notas.js"></script>
+</body>
+</html>
