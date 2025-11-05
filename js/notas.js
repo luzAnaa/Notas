@@ -8,30 +8,37 @@ function inserir() {
     if (!notaTexto) {
         alert("Não há nota para inserir")
     }
+    else{
+        var tipo = tipoSelecionado.value
+        var novo = document.createElement("p")
+        novo.textContent = notaTexto
 
-    var tipo = tipoSelecionado.value
-    var novo = document.createElement("p")
-    novo.textContent = notaTexto
+        // ID único para cada nota
+        novo.id = `nota_${tipo}_${Date.now()}`
 
-    // ID único para cada nota
-    novo.id = `nota_${tipo}_${Date.now()}`
+        // alternar cores
+        if (colorCont === 0) {
+            novo.style.color = "blue"
+            colorCont = 1
+        } else if (colorCont === 1) {
+            novo.style.color = "green"
+            colorCont = 2
+        } else {
+            novo.style.color = "purple"
+            colorCont = 0
+        }
 
-    // alternar cores
-    if (colorCont === 0) {
-        novo.style.color = "blue"
-        colorCont = 1
-    } else if (colorCont === 1) {
-        novo.style.color = "green"
-        colorCont = 2
-    } else {
-        novo.style.color = "purple"
-        colorCont = 0
+        // adiciona no campo correto
+        //var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes")
+        //destino.append(novo)
+
+        var destino = tipo
+        if(destino === "urgente"){
+            document.getElementById("urgentes").append(novo)
+        } else {
+            document.getElementById("nao_urgentes").append(novo)
+        }
     }
-
-    // adiciona no campo correto
-    var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes")
-    destino.append(novo)
-
     // limpa o campo de texto
     document.getElementById("nota_Inserir").value = ""
 }
