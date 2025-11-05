@@ -29,7 +29,7 @@ function inserir() {
 
     // adiciona no campo correto
     var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes")
-    destino.appendChild(novo)
+    destino.append(novo)
 
     // limpa o campo de texto
     document.getElementById("nota_Inserir").value = ""
