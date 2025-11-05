@@ -10,7 +10,7 @@ function inserir() {
         return
     }
 
-    var tipo = tipoSelecionado.value; // "urgente" ou "nao_urgente"
+    var tipo = tipoSelecionado.value
     var novo = document.createElement("p")
     novo.textContent = notaTexto
 
