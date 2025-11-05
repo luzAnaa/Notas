@@ -7,7 +7,6 @@ function inserir() {
 
     if (!notaTexto) {
         alert("Não há nota para inserir")
-        return
     }
 
     var tipo = tipoSelecionado.value
