@@ -7,20 +7,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    height: 100%;
 }
 
 /* ======== CONTAINER PRINCIPAL ======== */
 #main {
-    background-color: ghostwhite;
+    background-color: rgb(248, 247, 245);
     margin-top: 30px;
     padding: 20px 30px;
     border-radius: 12px;
     width: 70%;
-    height: 85vh;
+    height: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 /* ======== ÁREA DE INSERÇÃO DE NOTAS ======== */
@@ -48,7 +47,7 @@ body {
 #btn_excluirTodasNU,
 #btn_excluirNotaU,
 #btn_excluirTodasU {
-    background-color: #2f3640;
+    background-color: #181a1a;
     color: whitesmoke;
     font-weight: bold;
     border-radius: 8px;
@@ -67,12 +66,10 @@ body {
 /* ======== PAINEL DE NOTAS ======== */
 #painel_notas {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: nowrap;
-    gap: 20px;
-    flex-grow: 1;
+    gap: 50px;
     align-items: flex-start;
-    overflow: hidden;
 }
 
 /* ======== ÁREAS DE NOTAS ======== */
@@ -86,11 +83,11 @@ body {
 
 /* Cores de fundo */
 #nao_urgentes {
-    background-color: #fff5a0; /* amarelo suave */
+    background-color: #fff279; /* amarelo suave */
 }
 
 #urgentes {
-    background-color: #ffb3b3; /* vermelho claro */
+    background-color: #ff5e5e; /* vermelho claro */
 }
 
 /* ======== TÍTULOS ======== */
@@ -99,7 +96,7 @@ body {
     text-align: center;
     margin-bottom: 10px;
     font-size: 22px;
-    color: #2f3640;
+    color: #000000;
 }
 
 /* ======== NOTAS ======== */
@@ -112,8 +109,3 @@ body {
     word-wrap: break-word;
 }
 
-#nao_urgentes p:hover,
-#urgentes p:hover {
-    transform: scale(1.03);
-    background-color: #f0f0f0;
-}
