@@ -9,11 +9,6 @@ function inserir() {
         return
     }
 
-    if (!tipoSelecionado) {
-        alert("Selecione uma opção: Urgente ou Não Urgente.")
-        return
-    }
-
     var tipo = tipoSelecionado.value; // "urgente" ou "nao_urgente"
     var novo = document.createElement("p")
     novo.textContent = notaTexto
@@ -32,7 +27,7 @@ function inserir() {
 
     colorCont = (colorCont + 1) % 3
 
-    // adiciona na div correta
+    // adiciona no campo correto
     var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes")
     destino.appendChild(novo)
 
@@ -40,23 +35,23 @@ function inserir() {
     document.getElementById("nota_Inserir").value = ""
 }
 
-// excluir uma nota não urgente (última adicionada)
+// excluir uma nota não urgente
 function excluir_nota_NU() {
     var notas = document.querySelectorAll("#nao_urgentes p")
     if (notas.length > 0) {
         notas[notas.length - 1].remove()
     } else {
-        alert("Não há notas não urgentes para remover!")
+        alert("Não há notas para remover!")
     }
 }
 
-// excluir uma nota urgente (última adicionada)
+// excluir uma nota urgente
 function excluir_nota_U() {
     var notas = document.querySelectorAll("#urgentes p")
     if (notas.length > 0) {
         notas[notas.length - 1].remove()
     } else {
-        alert("Não há notas urgentes para remover!")
+        alert("Não há notas para remover!")
     }
 }
 
@@ -66,7 +61,7 @@ function excluir_todas_NU() {
     if (notas.length > 0) {
         notas.forEach(nota => nota.remove())
     } else {
-        alert("Não há notas não urgentes para remover!")
+        alert("Não há notas para remover!")
     }
 }
 
@@ -76,6 +71,6 @@ function excluir_todas_U() {
     if (notas.length > 0) {
         notas.forEach(nota => nota.remove())
     } else {
-        alert("Não há notas urgentes para remover!")
+        alert("Não há notas para remover!")
     }
 }

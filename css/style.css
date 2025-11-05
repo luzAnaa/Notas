@@ -83,11 +83,11 @@ body {
 
 /* Cores de fundo */
 #nao_urgentes {
-    background-color: #fff279; /* amarelo suave */
+    background-color: #fff279;
 }
 
 #urgentes {
-    background-color: #ff5e5e; /* vermelho claro */
+    background-color: #ff5e5e;
 }
 
 /* ======== TÍTULOS ======== */
