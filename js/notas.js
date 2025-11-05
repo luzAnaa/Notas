@@ -6,7 +6,7 @@ function inserir() {
     var tipoSelecionado = document.querySelector('input[name="tipo_nota"]:checked')
 
     if (!notaTexto) {
-        alert("Digite uma nota antes de inserir!")
+        alert("Não há nota para inserir")
         return
     }
 
