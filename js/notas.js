@@ -1,5 +1,6 @@
 var colorCont = 0
 
+// insere nova nota
 function inserir() {
     var notaTexto = document.getElementById("nota_Inserir").value.trim()
     var tipoSelecionado = document.querySelector('input[name="tipo_nota"]:checked')
