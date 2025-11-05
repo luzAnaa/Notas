@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Notas</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Rápidas</title>
+    <script type="text/javascript" src="js/notas.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Notas</h1>
 
-        <input type="text" id="notaTexto" placeholder="Digite sua nota aqui">
+    <div id="main">
+        <div id="notas">
+            <p>
+                <label for="nota_Inserir">Digite: </label>
+                <input type="text" id="nota_Inserir">
+                <input type="button" id="btn_inserir" value="INSERIR NOTA" onclick="inserir()">
+                <br><br>
 
-        <div class="radios">
-            <label><input type="radio" name="urgencia" value="nao" checked> Não urgente</label>
-            <label><input type="radio" name="urgencia" value="sim"> Urgente</label>
+                <input type="radio" id="radio_urgente" name="tipo_nota" value="urgente">
+                <label for="radio_urgente">Urgente</label>
+
+                <input type="radio" id="radio_nao_urgente" name="tipo_nota" value="nao_urgente" checked>
+                <label for="radio_nao_urgente">Não Urgente</label>
+            </p>
         </div>
 
-        <div class="acoes">
-            <button id="btnAdicionar">Adicionar</button>
-            <button id="btnApagarTudo">Apagar tudo</button>
-        </div>
-
-        <div class="listas">
-            <div class="box nao-urgente-box">
-                <h2>Não Urgente</h2>
-                <ul id="listaNao"></ul>
+        <div id="painel_notas">
+            <div id="nao_urgentes">
+                <h3>Não Urgentes</h3>
+                <input type="button" id="btn_excluirNotaNU" value="EXCLUIR NOTA" onclick="excluir_nota_NU()">
+                <input type="button" id="btn_excluirTodasNU" value="EXCLUIR TODAS" onclick="excluir_todas_NU()">
+                <!-- Aqui você pode listar as notas não urgentes -->
+                <ul id="lista_nao_urgentes"></ul>
             </div>
 
-            <div class="box urgente-box">
-                <h2>Urgente</h2>
-                <ul id="listaUrgente"></ul>
+            <div id="urgentes">
+                <h3>Urgentes</h3>
+                <input type="button" id="btn_excluirNotaU" value="EXCLUIR NOTA" onclick="excluir_nota_U()">
+                <input type="button" id="btn_excluirTodasU" value="EXCLUIR TODAS" onclick="excluir_todas_U()">
+                <!-- Aqui você pode listar as notas urgentes -->
+                <ul id="lista_urgentes"></ul>
             </div>
         </div>
     </div>
-
-    <script src="js/notas.js"></script>
 </body>
 </html>

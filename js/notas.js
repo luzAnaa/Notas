@@ -1,63 +1,81 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('notaTexto');
-    var btnAdicionar = document.getElementById('btnAdicionar');
-    var btnApagarTudo = document.getElementById('btnApagarTudo');
-    var listaNao = document.getElementById('listaNao');
-    var listaUrgente = document.getElementById('listaUrgente');
+var colorCont = 0;
 
-    var cores = ['cor-blue','cor-green','cor-purple'];
-    var indiceCor = 0;
+function inserir() {
+    var notaTexto = document.getElementById("nota_Inserir").value.trim();
+    var tipoSelecionado = document.querySelector('input[name="tipo_nota"]:checked');
 
-    btnAdicionar.addEventListener('click', function() {
-        var texto = input.value.trim();
-        if (!texto) return;
-        var radio = document.querySelector('input[name="urgencia"]:checked');
-        var isUrgente = radio && radio.value === 'sim';
-        adicionarNota(texto, isUrgente);
-        input.value = '';
-       
-        document.querySelector('input[name="urgencia"][value="nao"]').checked = true;
-    });
-
-    function adicionarNota(texto, isUrgente) {
-        var li = document.createElement('li');
-        li.className = 'nota';
-
-        var span = document.createElement('span');
-        span.textContent = texto;
-
-       
-        if (!isUrgente) {
-            span.classList.add(cores[indiceCor]);
-        }
-
-        var btnRemover = document.createElement('button');
-        btnRemover.textContent = 'Remover';
-        btnRemover.className = 'remover';
-        btnRemover.addEventListener('click', function() {
-            var parent = li.parentNode;
-            if (parent) parent.removeChild(li);
-        });
-
-        li.appendChild(span);
-        li.appendChild(btnRemover);
-
-        if (isUrgente) {
-            listaUrgente.appendChild(li);
-        } else {
-            listaNao.appendChild(li);
-        }
-
-        indiceCor = (indiceCor + 1) % cores.length;
+    if (!notaTexto) {
+        alert("Digite uma nota antes de inserir!");
+        return;
     }
 
-    btnApagarTudo.addEventListener('click', function() {
-        listaNao.innerHTML = '';
-        listaUrgente.innerHTML = '';
-        indiceCor = 0;
-    });
+    if (!tipoSelecionado) {
+        alert("Selecione uma opção: Urgente ou Não Urgente.");
+        return;
+    }
 
-    input.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') btnAdicionar.click();
-    });
-});
+    var tipo = tipoSelecionado.value; // "urgente" ou "nao_urgente"
+    var novo = document.createElement("p");
+    novo.textContent = notaTexto;
+
+    // ID único para cada nota
+    novo.id = `nota_${tipo}_${Date.now()}`;
+
+    // alternar cores
+    if (colorCont === 0) {
+        novo.style.color = "blue";
+    } else if (colorCont === 1) {
+        novo.style.color = "green";
+    } else {
+        novo.style.color = "purple";
+    }
+
+    colorCont = (colorCont + 1) % 3;
+
+    // adiciona na div correta
+    var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes");
+    destino.appendChild(novo);
+
+    // limpa o campo de texto
+    document.getElementById("nota_Inserir").value = "";
+}
+
+// excluir uma nota não urgente (última adicionada)
+function excluir_nota_NU() {
+    var notas = document.querySelectorAll("#nao_urgentes p");
+    if (notas.length > 0) {
+        notas[notas.length - 1].remove();
+    } else {
+        alert("Não há notas não urgentes para remover!");
+    }
+}
+
+// excluir uma nota urgente (última adicionada)
+function excluir_nota_U() {
+    var notas = document.querySelectorAll("#urgentes p");
+    if (notas.length > 0) {
+        notas[notas.length - 1].remove();
+    } else {
+        alert("Não há notas urgentes para remover!");
+    }
+}
+
+// excluir todas as notas não urgentes
+function excluir_todas_NU() {
+    var notas = document.querySelectorAll("#nao_urgentes p");
+    if (notas.length > 0) {
+        notas.forEach(nota => nota.remove());
+    } else {
+        alert("Não há notas não urgentes para remover!");
+    }
+}
+
+// excluir todas as notas urgentes
+function excluir_todas_U() {
+    var notas = document.querySelectorAll("#urgentes p");
+    if (notas.length > 0) {
+        notas.forEach(nota => nota.remove());
+    } else {
+        alert("Não há notas urgentes para remover!");
+    }
+}

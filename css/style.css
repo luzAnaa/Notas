@@ -1,0 +1,119 @@
+/* ======== ESTILO GERAL ======== */
+body {
+    background-color: rgb(219, 218, 212);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+/* ======== CONTAINER PRINCIPAL ======== */
+#main {
+    background-color: ghostwhite;
+    margin-top: 30px;
+    padding: 20px 30px;
+    border-radius: 12px;
+    width: 70%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ======== ÁREA DE INSERÇÃO DE NOTAS ======== */
+#notas {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#nota_Inserir {
+    width: 60%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+#notas input[type="radio"] {
+    margin-left: 15px;
+}
+
+/* ======== BOTÕES ======== */
+#btn_inserir,
+#btn_excluirNotaNU,
+#btn_excluirTodasNU,
+#btn_excluirNotaU,
+#btn_excluirTodasU {
+    background-color: #2f3640;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 6px 4px;
+}
+
+#btn_inserir:hover,
+#btn_excluirNotaNU:hover,
+#btn_excluirTodasNU:hover,
+#btn_excluirNotaU:hover,
+#btn_excluirTodasU:hover {
+    background-color: #3c4450;
+}
+
+/* ======== PAINEL DE NOTAS ======== */
+#painel_notas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    gap: 20px;
+    flex-grow: 1;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+/* ======== ÁREAS DE NOTAS ======== */
+#nao_urgentes,
+#urgentes {
+    padding: 10px 15px;
+    width: 300px;
+    height: 60vh;
+    border-radius: 10px;
+}
+
+/* Cores de fundo */
+#nao_urgentes {
+    background-color: #fff5a0; /* amarelo suave */
+}
+
+#urgentes {
+    background-color: #ffb3b3; /* vermelho claro */
+}
+
+/* ======== TÍTULOS ======== */
+#nao_urgentes h3,
+#urgentes h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #2f3640;
+}
+
+/* ======== NOTAS ======== */
+#nao_urgentes p,
+#urgentes p {
+    background-color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 6px 0;
+    word-wrap: break-word;
+}
+
+#nao_urgentes p:hover,
+#urgentes p:hover {
+    transform: scale(1.03);
+    background-color: #f0f0f0;
+}
