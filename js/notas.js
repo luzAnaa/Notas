@@ -42,7 +42,7 @@ function excluir_nota_NU() {
     if (notas.length > 0) {
         notas[notas.length - 1].remove()
     } else {
-        alert("Não há notas para remover!")
+        alert("Não há notas para remover")
     }
 }
 
@@ -52,7 +52,7 @@ function excluir_nota_U() {
     if (notas.length > 0) {
         notas[notas.length - 1].remove()
     } else {
-        alert("Não há notas para remover!")
+        alert("Não há notas para remover")
     }
 }
 
@@ -62,7 +62,7 @@ function excluir_todas_NU() {
     if (notas.length > 0) {
         notas.forEach(nota => nota.remove())
     } else {
-        alert("Não há notas para remover!")
+        alert("Não há notas para remover")
     }
 }
 
@@ -72,6 +72,6 @@ function excluir_todas_U() {
     if (notas.length > 0) {
         notas.forEach(nota => nota.remove())
     } else {
-        alert("Não há notas para remover!")
+        alert("Não há notas para remover")
     }
 }
