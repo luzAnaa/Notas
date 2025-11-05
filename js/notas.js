@@ -19,13 +19,14 @@ function inserir() {
     // alternar cores
     if (colorCont === 0) {
         novo.style.color = "blue"
+        colorCont = 1
     } else if (colorCont === 1) {
         novo.style.color = "green"
+        colorCont = 2
     } else {
         novo.style.color = "purple"
+        colorCont = 0
     }
-
-    colorCont = (colorCont + 1) % 3
 
     // adiciona no campo correto
     var destino = tipo === "urgente" ? document.getElementById("urgentes") : document.getElementById("nao_urgentes")
